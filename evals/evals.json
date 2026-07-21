@@ -1,0 +1,58 @@
+{
+ "skill_name": "resume-studio",
+ "evals": [
+  {
+   "id": 0,
+   "prompt": "hey so i finally want to sort out my resume situation properly. i've pasted my old resume plus a bunch of messy notes about what i actually did into career-dump.md (attached). can you start building my professional profile from this? i'm in meetings the rest of the day so don't wait on me \u2014 do what you can with what's there and leave your questions somewhere i can answer tonight.",
+   "expected_output": "A resume-studio/ workspace containing career-corpus.md following the schema (stable anchors per role/project, provenance on metrics, [NO METRIC]/[VAGUE] annotations on weak claims like the BigBasket Diwali campaign), a changelog entry, and a batch of prioritized gap-driven follow-up questions saved for the user. No fabricated numbers \u2014 the promotion date, ROAS 1.8\u21923.1, 80L\u21922.5Cr budget, 22%\u219234% activation etc. captured with source attribution.",
+   "files": [
+    "fixtures/career-dump.md"
+   ],
+   "assertions": [
+    "A career corpus / master profile file exists capturing the full history (not just a resume draft)",
+    "The Apr 2023 promotion missing from the old resume is captured",
+    "Key metrics from the dump are captured unaltered (ROAS 1.8\u21923.1, ~80L\u21922.5Cr budget, activation 22%\u219234%, retention ~18% of orders)",
+    "No fabricated numbers: every metric in outputs traces to the dump",
+    "Weak/unverified claims carry explicit gap annotations ([NO METRIC]/[VAGUE]/[THIN] or equivalent markers)",
+    "Follow-up questions saved to a file, prioritized, including the 'by the time i left' vs 'present' discrepancy",
+    "Corpus uses stable per-role/project anchors and per-claim provenance (schema compliance)",
+    "A changelog records what was learned this session"
+   ]
+  },
+  {
+   "id": 1,
+   "prompt": "I'm applying for a Senior Product Manager - Monetization role at Cashfree Payments. My resume-studio folder is attached. Here's the JD:\n\n---\nSenior Product Manager \u2013 Monetization | Cashfree Payments | Bengaluru\n\nCashfree Payments is a leading full-stack payments platform processing $80B+ annually for 800,000+ businesses. We're hiring a Senior PM to own monetization across our payments suite.\n\nWhat you'll do:\n- Own pricing strategy and packaging across payment gateway, payouts, and subscription products\n- Drive the billing and invoicing experience for merchants from self-serve to enterprise\n- Partner with sales, finance, and revenue operations on deal desk, discounting policy, and margin analytics\n- Run pricing experiments and build the instrumentation to measure willingness to pay\n- Own P&L visibility for your product lines and report monetization metrics to leadership\n\nWhat we're looking for:\n- 6+ years of product management experience, with at least 2 years in fintech/payments\n- Demonstrated experience running pricing or packaging changes at scale\n- Strong SQL and experimentation fundamentals\n- Experience working with both self-serve and enterprise sales-led motions\n- Bonus: experience with lending or credit products, and managing/mentoring other PMs\n---\n\nTailor my resume for this role. I'm travelling today, so if something needs my input just make your best call and flag it in the report.",
+   "expected_output": "An applications/2026-XX-cashfree-senior-pm/ folder with: jd.md saved verbatim, resume.md (single column, standard headings, 475-600 words, XYZ-quantified bullets, JD language woven in, no 'spearheaded' per style rules, \u20b9X Cr currency format, one page), rendered resume.docx via the bundled script, and delta-report.md mapping changes to JD requirements plus an honest gap report (lending/credit experience gap, PM mentoring partial evidence) and likely interview probes. No fabricated claims beyond corpus evidence.",
+   "files": [
+    "fixtures/resume-studio/"
+   ],
+   "assertions": [
+    "Application folder contains the JD saved to a file",
+    "resume.md exists with standard section labels (Summary/Work Experience/Education/Skills) in single-column markdown",
+    "Style rules honored: no 'spearheaded', Indian currency as \u20b9X Cr, no graphics/photo",
+    "No fabricated evidence: lending/credit and P&L claims NOT invented; every metric matches corpus values",
+    "An ATS-safe resume.docx is rendered (opens via python-docx, no tables/text boxes)",
+    "A delta/tailoring report maps resume changes to specific JD requirements",
+    "The report includes an honest gap list (lending/credit gap at minimum)",
+    "Resume body word count is in the 450-650 range (playbook target 475-600)"
+   ]
+  },
+  {
+   "id": 2,
+   "prompt": "quick fixes on the cashfree resume you made me (in my resume-studio folder, attached): 1) never use em dashes in any of my resumes ever, i hate them 2) the churn number on the pricing migration was actually 3.8% not 4% \u2014 that's from our Q4 board deck 3) drop the Reforge cert from my resumes unless the role is specifically growth/monetization focused... actually wait, cashfree IS monetization focused so keep it there, but make that a general rule going forward. update everything that needs updating.",
+   "expected_output": "style-rules.md gains a dated 'never em dashes' rule and a conditional Reforge framing rule; career-corpus.md churn metric updated to 3.8% at the usage-based-pricing anchor with new provenance (Q4 board deck); changelog.md records all learning events; the Cashfree resume.md is regenerated with zero em dashes, 3.8% churn, Reforge retained; docx re-rendered. The one-off vs permanent distinction is honored (Reforge stays on THIS resume).",
+   "files": [
+    "fixtures/resume-studio/"
+   ],
+   "assertions": [
+    "style-rules.md gains a dated never-em-dashes rule",
+    "style-rules.md gains a conditional Reforge-cert rule (growth/monetization roles only)",
+    "career-corpus.md churn metric updated to 3.8% with Q4 board deck provenance",
+    "Regenerated resume.md contains zero em dashes (en dashes in date ranges permitted)",
+    "resume.md shows 3.8% churn AND retains the Reforge cert (one-off vs permanent distinction honored)",
+    "changelog.md has dated entries for all three learning events",
+    "resume.docx regenerated and consistent with resume.md (3.8%, no em dashes)"
+   ]
+  }
+ ]
+}
